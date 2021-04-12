@@ -15,6 +15,7 @@
 		4ABB652D2623A3CA00F1E654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB652B2623A3CA00F1E654 /* LaunchScreen.storyboard */; };
 		4ABB65372623AA6000F1E654 /* Balham.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB65362623AA6000F1E654 /* Balham.otf */; };
 		4ABB654726244A7E00F1E654 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB654626244A7E00F1E654 /* Question.swift */; };
+		4ABB654E262456F800F1E654 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB654D262456F800F1E654 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4ABB652E2623A3CA00F1E654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ABB65362623AA6000F1E654 /* Balham.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Balham.otf; sourceTree = "<group>"; };
 		4ABB654626244A7E00F1E654 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		4ABB654D262456F800F1E654 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				4ABB654626244A7E00F1E654 /* Question.swift */,
+				4ABB654D262456F800F1E654 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ABB65252623A3C900F1E654 /* ViewController.swift in Sources */,
+				4ABB654E262456F800F1E654 /* Game.swift in Sources */,
 				4ABB654726244A7E00F1E654 /* Question.swift in Sources */,
 				4ABB65212623A3C900F1E654 /* AppDelegate.swift in Sources */,
 				4ABB65232623A3C900F1E654 /* SceneDelegate.swift in Sources */,
