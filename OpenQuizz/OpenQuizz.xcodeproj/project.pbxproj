@@ -14,6 +14,10 @@
 		4ABB652A2623A3CA00F1E654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB65292623A3CA00F1E654 /* Assets.xcassets */; };
 		4ABB652D2623A3CA00F1E654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB652B2623A3CA00F1E654 /* LaunchScreen.storyboard */; };
 		4ABB65372623AA6000F1E654 /* Balham.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB65362623AA6000F1E654 /* Balham.otf */; };
+		4ABB654726244A7E00F1E654 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB654626244A7E00F1E654 /* Question.swift */; };
+		4ABB654E262456F800F1E654 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB654D262456F800F1E654 /* Game.swift */; };
+		4ABB65512624577100F1E654 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65502624577100F1E654 /* QuestionManager.swift */; };
+		4ABB65562625D29300F1E654 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65552625D29300F1E654 /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		4ABB652C2623A3CA00F1E654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ABB652E2623A3CA00F1E654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ABB65362623AA6000F1E654 /* Balham.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Balham.otf; sourceTree = "<group>"; };
+		4ABB654626244A7E00F1E654 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		4ABB654D262456F800F1E654 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4ABB65502624577100F1E654 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		4ABB65552625D29300F1E654 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,52 @@
 		4ABB651F2623A3C900F1E654 /* OpenQuizz */ = {
 			isa = PBXGroup;
 			children = (
+				4ABB65412623C93000F1E654 /* Model */,
+				4ABB65432623C93A00F1E654 /* Controller */,
+				4ABB65422623C93600F1E654 /* View */,
+				4ABB65442623C94000F1E654 /* Supporting Files */,
+			);
+			path = OpenQuizz;
+			sourceTree = "<group>";
+		};
+		4ABB65412623C93000F1E654 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4ABB654626244A7E00F1E654 /* Question.swift */,
+				4ABB654D262456F800F1E654 /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ABB65422623C93600F1E654 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4ABB65552625D29300F1E654 /* QuestionView.swift */,
+				4ABB65262623A3C900F1E654 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4ABB65432623C93A00F1E654 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4ABB65242623A3C900F1E654 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4ABB65442623C94000F1E654 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				4ABB65202623A3C900F1E654 /* AppDelegate.swift */,
 				4ABB65222623A3C900F1E654 /* SceneDelegate.swift */,
-				4ABB65242623A3C900F1E654 /* ViewController.swift */,
-				4ABB65262623A3C900F1E654 /* Main.storyboard */,
 				4ABB65362623AA6000F1E654 /* Balham.otf */,
 				4ABB65292623A3CA00F1E654 /* Assets.xcassets */,
 				4ABB652B2623A3CA00F1E654 /* LaunchScreen.storyboard */,
 				4ABB652E2623A3CA00F1E654 /* Info.plist */,
+				4ABB65502624577100F1E654 /* QuestionManager.swift */,
 			);
-			path = OpenQuizz;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ABB65252623A3C900F1E654 /* ViewController.swift in Sources */,
+				4ABB654E262456F800F1E654 /* Game.swift in Sources */,
+				4ABB654726244A7E00F1E654 /* Question.swift in Sources */,
+				4ABB65562625D29300F1E654 /* QuestionView.swift in Sources */,
 				4ABB65212623A3C900F1E654 /* AppDelegate.swift in Sources */,
 				4ABB65232623A3C900F1E654 /* SceneDelegate.swift in Sources */,
+				4ABB65512624577100F1E654 /* QuestionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 854T2P6SU6;
-				INFOPLIST_FILE = OpenQuizz/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OpenQuizz/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 854T2P6SU6;
-				INFOPLIST_FILE = OpenQuizz/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OpenQuizz/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
