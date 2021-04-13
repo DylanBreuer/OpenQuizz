@@ -17,6 +17,7 @@
 		4ABB654726244A7E00F1E654 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB654626244A7E00F1E654 /* Question.swift */; };
 		4ABB654E262456F800F1E654 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB654D262456F800F1E654 /* Game.swift */; };
 		4ABB65512624577100F1E654 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65502624577100F1E654 /* QuestionManager.swift */; };
+		4ABB65562625D29300F1E654 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65552625D29300F1E654 /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4ABB654626244A7E00F1E654 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4ABB654D262456F800F1E654 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4ABB65502624577100F1E654 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		4ABB65552625D29300F1E654 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				4ABB65412623C93000F1E654 /* Model */,
-				4ABB65422623C93600F1E654 /* View */,
 				4ABB65432623C93A00F1E654 /* Controller */,
+				4ABB65422623C93600F1E654 /* View */,
 				4ABB65442623C94000F1E654 /* Supporting Files */,
 			);
 			path = OpenQuizz;
@@ -84,6 +86,7 @@
 		4ABB65422623C93600F1E654 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4ABB65552625D29300F1E654 /* QuestionView.swift */,
 				4ABB65262623A3C900F1E654 /* Main.storyboard */,
 			);
 			path = View;
@@ -185,6 +188,7 @@
 				4ABB65252623A3C900F1E654 /* ViewController.swift in Sources */,
 				4ABB654E262456F800F1E654 /* Game.swift in Sources */,
 				4ABB654726244A7E00F1E654 /* Question.swift in Sources */,
+				4ABB65562625D29300F1E654 /* QuestionView.swift in Sources */,
 				4ABB65212623A3C900F1E654 /* AppDelegate.swift in Sources */,
 				4ABB65232623A3C900F1E654 /* SceneDelegate.swift in Sources */,
 				4ABB65512624577100F1E654 /* QuestionManager.swift in Sources */,

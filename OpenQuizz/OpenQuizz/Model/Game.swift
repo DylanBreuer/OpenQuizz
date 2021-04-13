@@ -19,7 +19,7 @@ class Game {
         case ongoing, over
     }
 
-    var currentQuestion: Question {
+    var currentQuestion : Question {
         return questions[currentIndex]
     }
 
@@ -39,7 +39,7 @@ class Game {
     }
 
     func answerCurrentQuestion(with answer: Bool) {
-        if (currentQuestion.isCorrect && answer) || (!currentQuestion.isCorrect && !answer) {
+        if currentQuestion.isCorrect == answer {
             score += 1
         }
         goToNextQuestion()
