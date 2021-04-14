@@ -67,9 +67,16 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jks-ZT-2PC" customClass="MessageLabel" customModule="OpenQuizz" customModuleProvider="target">
-                                <rect key="frame" x="65" y="408" width="240" height="73"/>
+                                <rect key="frame" x="65" y="400" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1H-Rc-9oU">
+                                <rect key="frame" x="65" y="458" width="240" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -82,6 +89,7 @@
                         <outlet property="messageLabel" destination="Jks-ZT-2PC" id="U5C-Fr-Jr1"/>
                         <outlet property="newGameButton" destination="pHU-TD-7gE" id="w7N-lA-u07"/>
                         <outlet property="questionView" destination="I6b-bw-jpd" id="Jy7-S8-8IV"/>
+                        <outlet property="resultLabel" destination="z1H-Rc-9oU" id="ToU-nC-0jF"/>
                         <outlet property="scoreLabel" destination="Jo8-KU-keX" id="4gz-DT-XME"/>
                     </connections>
                 </viewController>

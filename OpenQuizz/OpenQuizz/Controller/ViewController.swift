@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionView: QuestionView!
     @IBOutlet weak var messageLabel: MessageLabel!
+    @IBOutlet weak var resultLabel: UILabel!
     
     var game = Game()
     
@@ -30,9 +31,9 @@ class ViewController: UIViewController {
         newGameButton.layer.cornerRadius = CGFloat(10)
         
         questionView.layer.cornerRadius = CGFloat(20)
-        
+        resultLabel.alpha = 0
         messageLabel.layer.masksToBounds = true
-        messageLabel.layer.cornerRadius = CGFloat(30)
+        messageLabel.layer.cornerRadius = CGFloat(20)
         messageLabel.alpha = 0
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragQuestionView(_:)))
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
     private func startNewGame() {
         activityIndicator.isHidden = false
         newGameButton.isEnabled = false
+        resultLabel.alpha = 0
         
         questionView.title = "Loading..."
         questionView.style = .standard
@@ -135,9 +137,7 @@ class ViewController: UIViewController {
                 self.messageLabel.alpha = 0
             }) { (_) in
                 if self.game.state == .over {
-                    UIView.animate(withDuration: 5, delay: 2, animations : {
-                        self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(40)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
-                    })
+                    self.displayResult()
                 }
             }
         }
@@ -175,6 +175,30 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
             self.questionView.transform = .identity
+        }, completion: nil)
+    }
+    
+    private func displayResult() {
+        UIView.animate(withDuration: 5, delay: 2, animations : {
+            self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(50)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
+        })
+        
+        UIView.animate(withDuration: 7, delay: 2, animations: {
+            switch self.game.score {
+            case 0,1,2 :
+                self.resultLabel.text = "Catastrophic..."
+            case 3,4 :
+                self.resultLabel.text = "You can do better..."
+            case 5,6 :
+                self.resultLabel.text = "Tell yourself that you've the average."
+            case 7,8,9 :
+                self.resultLabel.text = "Good game !"
+            case 10 :
+                self.resultLabel.text = "Perfect !!!"
+            default :
+                break
+            }
+            self.resultLabel.alpha = 1
         }, completion: nil)
     }
         
