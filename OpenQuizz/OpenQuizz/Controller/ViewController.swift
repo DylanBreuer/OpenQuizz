@@ -132,12 +132,16 @@ class ViewController: UIViewController {
         }
         UIView.animate(withDuration: 1, animations: {
             self.messageLabel.alpha = 1
-        }) {(_) in
-            UIView.animate(withDuration: 3, delay: 1.5, animations: {
-                self.messageLabel.alpha = 0
-            }) { (_) in
-                if self.game.state == .over {
-                    self.displayResult()
+        }) {(success) in
+            if success {
+                UIView.animate(withDuration: 2, delay: 1, animations: {
+                    self.messageLabel.alpha = 0
+                }) { (success) in
+                    if success {
+                        if self.game.state == .over {
+                            self.displayResult()
+                        }
+                    }
                 }
             }
         }
@@ -179,11 +183,11 @@ class ViewController: UIViewController {
     }
     
     private func displayResult() {
-        UIView.animate(withDuration: 5, delay: 2, animations : {
+        UIView.animate(withDuration: 5, delay: 0, animations : {
             self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(50)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
         })
         
-        UIView.animate(withDuration: 7, delay: 2, animations: {
+        UIView.animate(withDuration: 7, delay: 0, animations: {
             switch self.game.score {
             case 0,1,2 :
                 self.resultLabel.text = "Catastrophic..."
