@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A17B06926272298006832E8 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17B06826272298006832E8 /* MessageLabel.swift */; };
 		4ABB65212623A3C900F1E654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65202623A3C900F1E654 /* AppDelegate.swift */; };
 		4ABB65232623A3C900F1E654 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65222623A3C900F1E654 /* SceneDelegate.swift */; };
 		4ABB65252623A3C900F1E654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB65242623A3C900F1E654 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A17B06826272298006832E8 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		4ABB651D2623A3C900F1E654 /* OpenQuizz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenQuizz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ABB65202623A3C900F1E654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ABB65222623A3C900F1E654 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				4ABB65552625D29300F1E654 /* QuestionView.swift */,
 				4ABB65262623A3C900F1E654 /* Main.storyboard */,
+				4A17B06826272298006832E8 /* MessageLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				4ABB654E262456F800F1E654 /* Game.swift in Sources */,
 				4ABB654726244A7E00F1E654 /* Question.swift in Sources */,
 				4ABB65562625D29300F1E654 /* QuestionView.swift in Sources */,
+				4A17B06926272298006832E8 /* MessageLabel.swift in Sources */,
 				4ABB65212623A3C900F1E654 /* AppDelegate.swift in Sources */,
 				4ABB65232623A3C900F1E654 /* SceneDelegate.swift in Sources */,
 				4ABB65512624577100F1E654 /* QuestionManager.swift in Sources */,

@@ -9,15 +9,14 @@ import Foundation
 
 class Game {
     var score = 0
-
+    var answerIsCorrect = true
+    
     private var questions = [Question]()
     private var currentIndex = 0
 
     var state: State = .ongoing
 
-    enum State {
-        case ongoing, over
-    }
+    enum State { case ongoing, over }
 
     var currentQuestion : Question {
         return questions[currentIndex]
@@ -41,6 +40,9 @@ class Game {
     func answerCurrentQuestion(with answer: Bool) {
         if currentQuestion.isCorrect == answer {
             score += 1
+            answerIsCorrect = true
+        } else {
+            answerIsCorrect = false
         }
         goToNextQuestion()
     }
