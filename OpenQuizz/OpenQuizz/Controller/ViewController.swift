@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionView: QuestionView!
+    @IBOutlet weak var messageLabel: MessageLabel!
     
     var game = Game()
     
@@ -21,31 +22,60 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(questionsLoaded), name: name, object: nil)
         startNewGame()
         
+        newGameButton.layer.masksToBounds = false
+        newGameButton.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+        newGameButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        newGameButton.layer.shadowOpacity = 1.0
+        newGameButton.layer.shadowRadius = 0.0
+        newGameButton.layer.cornerRadius = CGFloat(10)
+        
+        questionView.layer.cornerRadius = CGFloat(20)
+        
+        messageLabel.layer.masksToBounds = true
+        messageLabel.layer.cornerRadius = CGFloat(30)
+        messageLabel.alpha = 0
+        
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragQuestionView(_:)))
         questionView.addGestureRecognizer(panGestureRecognizer)
     }
     
     @objc func questionsLoaded() {
         activityIndicator.isHidden = true
-        newGameButton.isHidden = false
+        newGameButton.isEnabled = true
         
         questionView.title = game.currentQuestion.title
     }
 
-    @IBAction func didTapNewGameButton() {
+    @IBAction func didPressNewGameButton() {
+        buttonPressed()
+    }
+
+    @IBAction func didReleaseNewGameButton() {
         startNewGame()
+        buttonReleased()
     }
     
     private func startNewGame() {
         activityIndicator.isHidden = false
-        newGameButton.isHidden = true
+        newGameButton.isEnabled = false
         
         questionView.title = "Loading..."
         questionView.style = .standard
         
         scoreLabel.text = "0 / 10"
+        scoreLabel.transform = .identity
         
         game.refresh()
+    }
+    
+    private func buttonPressed() {
+        newGameButton.transform = CGAffineTransform(translationX: 0, y: 5)
+        newGameButton.layer.masksToBounds = true
+    }
+    
+    private func buttonReleased() {
+        newGameButton.transform = .identity
+        newGameButton.layer.masksToBounds = false
     }
     
     @objc func dragQuestionView(_ sender : UIPanGestureRecognizer) {
@@ -93,6 +123,25 @@ class ViewController: UIViewController {
         }
         scoreLabel.text = "\(game.score) / 10"
         
+        if game.answerIsCorrect {
+            messageLabel.style = .correct
+        } else {
+            messageLabel.style = .incorrect
+        }
+        UIView.animate(withDuration: 1, animations: {
+            self.messageLabel.alpha = 1
+        }) {(_) in
+            UIView.animate(withDuration: 3, delay: 1.5, animations: {
+                self.messageLabel.alpha = 0
+            }) { (_) in
+                if self.game.state == .over {
+                    UIView.animate(withDuration: 5, delay: 2, animations : {
+                        self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(40)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
+                    })
+                }
+            }
+        }
+        
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform = CGAffineTransform()
         
@@ -127,7 +176,6 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
             self.questionView.transform = .identity
         }, completion: nil)
-
     }
         
 }
