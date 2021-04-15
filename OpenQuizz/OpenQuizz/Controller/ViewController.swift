@@ -184,7 +184,7 @@ class ViewController: UIViewController {
     
     private func displayResult() {
         UIView.animate(withDuration: 5, delay: 0, animations : {
-            self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(50)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
+            self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(30)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
         })
         
         UIView.animate(withDuration: 7, delay: 0, animations: {
