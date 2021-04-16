@@ -189,9 +189,11 @@ class ViewController: UIViewController {
     }
     
     private func displayResult() {
-        UIView.animate(withDuration: 5, delay: 0, animations : {
-            self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(30)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
-        })
+        if (self.scoreLabel.frame.origin.y + 81) < (self.newGameButton.frame.origin.y - 5) {
+            UIView.animate(withDuration: 5, delay: 0, animations : {
+                self.scoreLabel.transform = CGAffineTransform(translationX: 0, y: CGFloat(30)).concatenating(CGAffineTransform(scaleX: 1.5, y: 1.5))
+            })
+        }
         
         if (self.resultLabel.frame.origin.y + 51) < (self.newGameButton.frame.origin.y - 5) {
             self.resultLabel.isHidden = false
